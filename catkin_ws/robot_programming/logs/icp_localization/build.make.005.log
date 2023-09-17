@@ -1,0 +1,14 @@
+[35m[1mScanning dependencies of target icp[0m
+[ 11%] [32mBuilding CXX object CMakeFiles/icp.dir/src/icp/eigen_icp_2d.cpp.o[0m
+[ 33%] Built target map
+[ 44%] [32m[1mLinking CXX shared library /home/lattinone/catkin_ws/robot_programming/devel/.private/icp_localization/lib/libicp.so[0m
+[ 44%] Built target icp
+[35m[1mScanning dependencies of target localizer2d[0m
+[ 55%] [32mBuilding CXX object CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/localizer2d.dir/src/ros_bridge.cpp.o[0m
+[ 77%] [32m[1mLinking CXX shared library /home/lattinone/catkin_ws/robot_programming/devel/.private/icp_localization/lib/liblocalizer2d.so[0m
+[ 77%] Built target localizer2d
+[35m[1mScanning dependencies of target localizer_node[0m
+[ 88%] [32mBuilding CXX object CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/lattinone/catkin_ws/robot_programming/devel/.private/icp_localization/lib/icp_localization/localizer_node[0m
+[100%] Built target localizer_node

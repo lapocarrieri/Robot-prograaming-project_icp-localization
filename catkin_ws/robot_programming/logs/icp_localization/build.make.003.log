@@ -1,0 +1,12 @@
+[ 22%] Built target icp
+[ 44%] Built target map
+[ 55%] [32mBuilding CXX object CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o[0m
+In file included from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:7[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:1[m[K:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/map.h:6:10:[m[K [01;31m[Kfatal error: [m[Kopencv2/core.hpp: No such file or directory
+    6 | #include [01;31m[K<opencv2/core.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

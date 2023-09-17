@@ -1,0 +1,4 @@
+[ 22%] Built target icp
+[ 44%] Built target map
+[ 77%] Built target localizer2d
+[100%] Built target localizer_node

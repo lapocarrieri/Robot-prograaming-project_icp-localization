@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG  -shared -Wl,-soname,libicp.so -o /home/lattinone/catkin_ws/robot_programming/devel/.private/icp_localization/lib/libicp.so CMakeFiles/icp.dir/src/icp/eigen_icp_2d.cpp.o 

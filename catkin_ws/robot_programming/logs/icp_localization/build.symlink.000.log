@@ -1,0 +1,7 @@
+Symlinking /home/lattinone/catkin_ws/robot_programming/devel/share/icp_localization/cmake/icp_localizationConfig-version.cmake
+Symlinking /home/lattinone/catkin_ws/robot_programming/devel/share/icp_localization/cmake/icp_localizationConfig.cmake
+Symlinking /home/lattinone/catkin_ws/robot_programming/devel/lib/libicp.so
+Symlinking /home/lattinone/catkin_ws/robot_programming/devel/lib/liblocalizer2d.so
+Symlinking /home/lattinone/catkin_ws/robot_programming/devel/lib/libmap.so
+Symlinking /home/lattinone/catkin_ws/robot_programming/devel/lib/pkgconfig/icp_localization.pc
+Symlinking /home/lattinone/catkin_ws/robot_programming/devel/lib/icp_localization/localizer_node

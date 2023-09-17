@@ -1,0 +1,7 @@
+[ 22%] Built target icp
+[ 44%] Built target map
+[ 77%] Built target localizer2d
+[35m[1mScanning dependencies of target localizer_node[0m
+[ 88%] [32mBuilding CXX object CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable /home/lattinone/catkin_ws/robot_programming/devel/.private/icp_localization/lib/icp_localization/localizer_node[0m
+[100%] Built target localizer_node
