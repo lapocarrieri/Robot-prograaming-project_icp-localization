@@ -1,8 +1,8 @@
 window
 (
-  size [ 960 812 ] # in pixels
-  scale 62.769   # pixels per meter
-  center [ -7.493 -11.171 ]
+  size [ 1327 2114 ] # in pixels
+  scale 20.   # pixels per meter
+  center [ 0.000 0.000 ]
   rotate [ 0.000  0.000 ]
   			
   show_data 1              # 1=on 0=off
@@ -87,16 +87,16 @@ floorplan
 (
    name "diag_1"     
    bitmap "cappero_map.png"
-   size   [106.913 49.353 0.500]
-   pose   [0.087 6.650 0.000 0.000]
+   size   [106.913 49.3527 0.5]
+   pose   [0 0 0 0]
 )
 
 # throw in a robot
-erratic( pose [ -5.020 -10.945 0.000 180.000 ] name "era" color "blue")
+erratic( pose [ -4 -13 0.000 180.000 ] name "era" color "blue")
 
 # throw in obstacles
-block(name "obstacle_red" color "red" pose [ -3.000 -12.000 0.000 180.000 ])
-block(name "obstacle_purple" color "purple" pose [ -3.000 -11.000 0.000 150.000 ])
+block(name "obstacle_red" color "red" pose [ -3 -12 0.000 180.000 ])
+block(name "obstacle_purple" color "purple" pose [ -3 -11 0.000 150.000 ])
 
 
 

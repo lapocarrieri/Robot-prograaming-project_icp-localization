@@ -50,10 +50,15 @@ You can test your localizer using `RViz`. We have provided a configuration that 
 
 Go to the project directory, source ros and launch rviz with our configuration
 ```sh
+cd /home/lattinone/catkin_ws/02_icp_localization
+source /opt/ros/noetic/setup.bash
 rviz -d test_data/rviz.rviz
 ```
 
 ## Requirements
+
+source /opt/ros/noetic/setup.bash
+roscore
 
 
 ### Map Server
@@ -63,6 +68,7 @@ rviz -d test_data/rviz.rviz
    ```
 - To launch the node, go to the project directory, source ros and launch the `map_server` node
   - ```sh
+  cd /home/lattinone/catkin_ws/02_icp_localization
     source /opt/ros/noetic/setup.bash
     rosrun map_server map_server test_data/cappero_map.yaml    
     ```
@@ -74,6 +80,8 @@ rviz -d test_data/rviz.rviz
   ```
 - To launch the simulator, go to the project directory, source ros, launch the roscore and launch the `stageros` node
   - ```sh
+  cd /home/lattinone/catkin_ws/02_icp_localization
+   source /opt/ros/noetic/setup.bash
     rosrun stage_ros stageros test_data/cappero.world
     ```
 

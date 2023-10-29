@@ -11,7 +11,8 @@ class Localizer2D {
   using PointType = Eigen::Vector2f;
   using ContainerType =
       std::vector<PointType, Eigen::aligned_allocator<PointType>>;
-
+  using AnswerType = std::vector<PointType*>;
+  Eigen::Isometry2f _laser_in_world;
   Localizer2D();
 
   /**
@@ -62,17 +63,23 @@ class Localizer2D {
    * @return const Eigen::Isometry2f&
    */
   inline const Eigen::Isometry2f& X() const { return _laser_in_world; }
+  
 
  protected:
   std::shared_ptr<Map> _map;
-  Eigen::Isometry2f _laser_in_world;
-
+  
+   using TreeType = TreeNode_<ContainerType::iterator>;
+   std::shared_ptr<TreeType> _obst_tree_ptr;
   // Obstacles vector
   ContainerType _obst_vect;
-  using TreeType = TreeNode_<ContainerType::iterator>;
+  TreeType kd_tree;
+    std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f>> prediction_;
+  std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f>>  prediction_normal;
   // Obstacle KD-Tree for fast NN-search
-  std::shared_ptr<TreeType> _obst_tree_ptr;
+  std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f>> scan_fixed;
 
+
+  
   // Laser scanner properties
   float _range_min, _range_max;
   float _angle_min, _angle_max, _angle_increment;
@@ -85,8 +92,6 @@ class Localizer2D {
    * @param dest_ Output predicted scan
    */
   void getPrediction(ContainerType& dest_);
-  private:
-    TreeNode_ _kd_tree;
-  Eigen::Isometry2f _initial_pose;  
+
 };
 

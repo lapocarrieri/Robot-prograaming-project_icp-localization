@@ -4,7 +4,7 @@
 #include <ros/ros.h>
 #include <sensor_msgs/LaserScan.h>
 #include <tf2_ros/transform_broadcaster.h>
-
+#include <sensor_msgs/PointCloud.h>
 #include <Eigen/Dense>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
@@ -26,8 +26,8 @@ void callback(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& msg) {
 }
 
 std::shared_ptr<Map> map_ptr = nullptr;
-ros::Publisher pub_scan, pub_odom;
-
+ros::Publisher pub_scan, pub_odom,pub_scan_prediction;
+ sensor_msgs::LaserScan laserscan_msg;
 Localizer2D localizer;
 
 int main(int argc, char** argv) {
@@ -63,7 +63,8 @@ map_ptr = std::make_shared<Map>();
 
   // Scan advertiser for visualization purposes
   pub_scan = nh.advertise<sensor_msgs::LaserScan>("/scan_out", 10);
-
+  pub_scan_prediction = nh.advertise<sensor_msgs::LaserScan>("/scan_prediction", 10);
+  
   ROS_INFO("Node started. Waiting for input data");
 
   // Spin the node
@@ -119,35 +120,43 @@ void callback_initialpose(const geometry_msgs::PoseWithCovarianceStampedConstPtr
   // Convert the Pose message to an Eigen::Isometry2f
   Eigen::Isometry2f isometry_initial_pose;
   pose2isometry(pose_msg, isometry_initial_pose);
-
+  isometry_initial_pose.linear() = Eigen::Rotation2Df(-M_PI).toRotationMatrix();
   // Now, 'isometry' contains the pose in Eigen::Isometry2f format.
   // Calculate the rotation angle using atan2
   float rotation_angle = atan2(isometry_initial_pose.linear()(1, 0), isometry_initial_pose.linear()(0, 0));
 
- 
+  
   ROS_INFO("Transformed Isometry: (%f, %f, %f)", isometry_initial_pose.translation().x(), isometry_initial_pose.translation().y(), rotation_angle);
   localizer.setInitialPose(isometry_initial_pose);
 }
  
 
 void callback_scan(const sensor_msgs::LaserScanConstPtr& msg_) {
-  ROS_INFO("Received a scan message.");
+  //ROS_INFO("Received a scan message.");
   /**
    * Convert the LaserScan message into a Localizer2D::ContainerType
    * [std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f>>]
    */
   // TODO
   std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f>> scan_data;
+   std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f>> prediction_;
 
   // Use the scan2eigen function to convert the LaserScan message
   scan2eigen(msg_, scan_data);
+  
   /**
    * Set the laser parameters and process the incoming scan through the
    * localizer
    */
   // TODO
+ 
     // Set the laser parameters based on the LaserScan message
   localizer.setLaserParams(msg_->range_min, msg_->range_max, msg_->angle_min, msg_->angle_max, msg_->angle_increment);
+  
+    
+   localizer.process(scan_data);
+  
+ 
 
   /**
    * Send a transform message between FRAME_WORLD and FRAME_LASER.
@@ -162,13 +171,15 @@ void callback_scan(const sensor_msgs::LaserScanConstPtr& msg_) {
    */
 
     geometry_msgs::TransformStamped transform_msg;
-
+Eigen::Isometry2f laser_in_world = localizer._laser_in_world;
   transform_msg.header.frame_id = FRAME_WORLD;
   transform_msg.child_frame_id = FRAME_LASER;
   transform_msg.header.stamp = msg_->header.stamp;
-  isometry2transformStamped(localizer.X(), transform_msg, transform_msg.header.frame_id,transform_msg.child_frame_id,transform_msg.header.stamp); // Use the current laser pose
+  isometry2transformStamped(laser_in_world, transform_msg, transform_msg.header.frame_id,transform_msg.child_frame_id,transform_msg.header.stamp); // Use the current laser pose
   static tf2_ros::TransformBroadcaster br;
   br.sendTransform(transform_msg);
+
+  
   // TODO
 
   /**
@@ -181,9 +192,26 @@ void callback_scan(const sensor_msgs::LaserScanConstPtr& msg_) {
   nav_msgs::Odometry odom_msg;
   transformStamped2odometry(transform_msg,odom_msg);
   pub_odom.publish(odom_msg);
+
+
   // Sends a copy of msg_ with FRAME_LASER set as frame_id
   // Used to visualize the scan attached to the current laser estimate.
   sensor_msgs::LaserScan out_scan = *msg_;
   out_scan.header.frame_id = FRAME_LASER;
   pub_scan.publish(out_scan);
+    laserscan_msg.header.frame_id = FRAME_LASER;  
+    laserscan_msg.angle_min = -M_PI / 2;  // Minimum angle of the scan
+    laserscan_msg.angle_max = M_PI / 2;   // Maximum angle of the scan
+    laserscan_msg.angle_increment = M_PI / 180;  // Angle increment between laser beams (1 degree)
+    laserscan_msg.range_min = 0.0;  // Minimum range value
+    laserscan_msg.range_max = 10.0; // Maximum range value
+    laserscan_msg.ranges.resize(prediction_.size());
+
+   for (size_t i = 0; i <prediction_.size(); ++i)
+    {
+        laserscan_msg.ranges[i] = prediction_[i].norm(); 
+    }
+
+   pub_scan_prediction.publish(laserscan_msg);
+    
 }

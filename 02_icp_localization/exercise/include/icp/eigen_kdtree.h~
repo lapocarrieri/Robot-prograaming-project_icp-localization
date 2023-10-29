@@ -64,7 +64,45 @@ class TreeNode_ {
       _right->fullSearch(answers, query, norm);
     }
   }
-  // in order to create a good fullsearch is necessary to change bruteForceSearch in order to select only the point in the laser range
+ void fullSearchLaser(AnswerType& answers, const PointType& query, Scalar norm,
+                     float range_min_, float range_max_, float angle_min_,
+                     float angle_max_, float angle_increment_) {
+    if (!_left && !_right) {
+        bruteForceSearch(answers, _begin, _end, query, norm);
+        return;
+    }
+
+    Scalar distance_from_split_plane = (query - _mean).dot(_normal);
+
+    // Calculate the polar coordinates of the query point
+    float query_angle = atan2(query.y(), query.x());
+    float query_range = query.norm();
+
+    if (distance_from_split_plane < -norm) {
+        _left->fullSearchLaser(answers, query, norm, range_min_, range_max_, angle_min_, angle_max_, angle_increment_);
+    } else if (distance_from_split_plane > norm) {
+        _right->fullSearchLaser(answers, query, norm, range_min_, range_max_, angle_min_, angle_max_, angle_increment_);
+    } else {
+        // Check angle and range conditions
+        bool isInRange = (query_range >= range_min_ && query_range <= range_max_);
+        bool isInAngleRange = false;
+
+        if (angle_min_ <= angle_max_) {
+            // Angle range does not span across 0 radians
+            isInAngleRange = (query_angle >= angle_min_ && query_angle <= angle_max_);
+        } else {
+            // Angle range spans across 0 radians
+            isInAngleRange = (query_angle >= angle_min_ || query_angle <= angle_max_);
+        }
+
+        if (isInRange && isInAngleRange) {
+            answers.push_back(&_data[_begin]);
+        }
+
+        _left->fullSearchLaser(answers, query, norm, range_min_, range_max_, angle_min_, angle_max_, angle_increment_);
+        _right->fullSearchLaser(answers, query, norm, range_min_, range_max_, angle_min_, angle_max_, angle_increment_);
+    }
+}
 
 
   void printTree(int depth = 0) {

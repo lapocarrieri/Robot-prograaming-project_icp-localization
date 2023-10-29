@@ -12,9 +12,7 @@ class Localizer2D {
   using ContainerType =
       std::vector<PointType, Eigen::aligned_allocator<PointType>>;
   using AnswerType = std::vector<PointType*>;
-  Eigen::Isometry2f _laser_in_world;
-    std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f>> prediction_;
-  
+  using Eigen::Isometry2f _laser_in_world;
   Localizer2D();
 
   /**
@@ -75,7 +73,7 @@ class Localizer2D {
   // Obstacles vector
   ContainerType _obst_vect;
   TreeType kd_tree;
-  
+    std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f>> prediction_;
   std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f>>  prediction_normal;
   // Obstacle KD-Tree for fast NN-search
   std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Eigen::Vector2f>> scan_fixed;

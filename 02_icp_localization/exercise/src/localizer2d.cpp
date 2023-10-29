@@ -4,10 +4,15 @@
 #include "eigen_kdtree.h"
 #include <iostream>
 #include <fstream>
+#include <ros/ros.h>
 Localizer2D::Localizer2D()
     : _map(nullptr),
       _laser_in_world(Eigen::Isometry2f::Identity()),
-      _obst_tree_ptr(nullptr) {}
+      _obst_tree_ptr(std::make_shared<TreeType>(_obst_vect.begin(), _obst_vect.end())),
+      kd_tree(_obst_vect.begin(), _obst_vect.end(), 10) {
+}
+
+
 
 /**
  * @brief Set the internal map reference and constructs the KD-Tree containing
@@ -15,16 +20,11 @@ Localizer2D::Localizer2D()
  *
  * @param map_
  */
-#include <Eigen/Core> // Include the Eigen library
 
-// Define the point type you want to use (Eigen::Vector3f)
-using PointType = Eigen::Vector3f;
 
-// Define the container type using the point type
-using ContainerType = std::vector<PointType, Eigen::aligned_allocator<PointType>>;
 
 // Define the tree node type using the container's iterator
-using TreeNodeType = TreeNode_<ContainerType::iterator>;
+
 
 
 void Localizer2D::setMap(std::shared_ptr<Map> map_) {
@@ -38,7 +38,6 @@ void Localizer2D::setMap(std::shared_ptr<Map> map_) {
 
         // Clear any existing obstacle data in _obst_vect
         
-	ContainerType kd_points;
 
         // Get the map grid data
         const std::vector<int8_t>& mapGrid = _map->grid();
@@ -57,17 +56,15 @@ void Localizer2D::setMap(std::shared_ptr<Map> map_) {
 
                     // Create a PointType (Eigen::Vector2f) for the obstacle and add it to _obst_vect
                     PointType obstaclePoint(worldX, worldY);
-                   kd_points.push_back(obstaclePoint);
+                  _obst_vect.push_back(obstaclePoint);
                 
-		    //std::cout << "Added obstacle at X: " << worldX << ", Y: " << worldY << std::endl;
+		  //std::cout << "Added obstacle at X: " << worldX << ", Y: " << worldY << std::endl;
                 }
 	    }
 	}
-	    // If the map is initialized, create KD-Tree using TreeNodeType with kd_points
-        TreeNode_ kd_tree(kd_points.begin(), kd_points.end(), 10); // Replace 10 with your desired maximum points in leaf
- // Store the KD-Tree in the obst_tree_ptr member variable or as needed within your class.
-       // Adjust this as needed based on how you manage your KD-Tree instance.
-     
+	 std::cout << "the size of the predicted is:"<< _obst_vect.size() << std::endl;
+	kd_tree = TreeType(_obst_vect.begin(), _obst_vect.end(), 10);
+	//	kd_tree.printTree();
 	   
          
 
@@ -81,6 +78,8 @@ void Localizer2D::setMap(std::shared_ptr<Map> map_) {
  */
 void Localizer2D::setInitialPose(const Eigen::Isometry2f& initial_pose_) {
   // TODO
+  _laser_in_world = initial_pose_;
+  
 }
 
 /**
@@ -92,19 +91,59 @@ void Localizer2D::setInitialPose(const Eigen::Isometry2f& initial_pose_) {
 void Localizer2D::process(const ContainerType& scan_) {
   // Use initial pose to get a synthetic scan to compare with scan_
   // TODO
+  // initial pose is an Isometry2 and it is inside _lase_in_world while containerType is   using ContainerType = std::vector<PointType, Eigen::aligned_allocator<PointType>>;
+  // Define a point representing the origin (0, 0)
+  
+  getPrediction(prediction_);
+
+  if (scan_fixed.size() == 0) {
+    scan_fixed = scan_;
+    ROS_INFO("Storing scan as fixed.");
+   
+  }
 
   /**
    * Align prediction and scan_ using ICP.
    * Set the current estimate of laser in world as initial guess (replace the
    * solver X before running ICP)
    */
-  // TODO
+  int _num_iterations  = 10;
+  int _min_points_in_leaf = 10;
 
-  /**
+
+ 
+  ICP icp(prediction_,scan_,_min_points_in_leaf);
+ icp.X()=_laser_in_world;
+ 
+ //ROS_INFO("Scan1 pos=(%f, %f,%f)]", _laser_in_world.translation().x(), _laser_in_world.translation().y(),_laser_in_world.rotation());
+  icp.run(_num_iterations);
+  // std::cout << "Isometry2f prima:" << std::endl;
+   // std::cout << "Translation:" << std::endl <<  _laser_in_world.translation() << std::endl;
+    //std::cout << "Rotation Matrix:" << std::endl << _laser_in_world.linear() << std::endl;
+    _laser_in_world= icp.X();
+    //ROS_INFO("Scan2 pos=(%f, %f,%f)]", _laser_in_world.translation().x(), _laser_in_world.translation().y(),_laser_in_world.rotation());
+    //_laser_in_world = _laser_in_world *icp.X();
+  
+  // std::cout << "Isometry2fdopo :" << std::endl;
+  // std::cout << "Translation:" << std::endl <<  _laser_in_world.translation() << std::endl;
+  // std::cout << "Rotation Matrix:" << std::endl << _laser_in_world.linear() << std::endl
+   float rotation_angle = atan2( _laser_in_world.linear()(1, 0),  _laser_in_world.linear()(0, 0));
+
+    ROS_INFO("Scan [Size points in the map :(nearby:%ld,predicted:%ld,reals:%ld),norm error of landmarks:%f,pos=(x %f, y %f, angle %f)]",prediction_normal.size(),prediction_.size(), scan_.size(), icp.chi(),
+	     _laser_in_world.translation().x(), _laser_in_world.translation().y(), (rotation_angle*360)/2*M_PI);
+
+
+     scan_fixed = scan_;
+    
+
+
+    /**
    * Store the solver result (X) as the new laser_in_world estimate
    *
    */
   // TODO
+
+  
 }
 
 /**
@@ -139,12 +178,53 @@ void Localizer2D::setLaserParams(float range_min_, float range_max_,
  *
  * @param dest_ Output predicted scan
  */
+
 void Localizer2D::getPrediction(ContainerType& prediction_) {
   prediction_.clear();
+  prediction_normal.clear();
   /**
    * To compute the prediction, query the KD-Tree and search for all points
    * around the current laser_in_world estimate.
    * You may use additional sensor's informations to refine the prediction.
    */
   // TODO
+ 
+    // Check if the KD-Tree is initialized
+  if (_obst_tree_ptr) {
+    // Perform a full search to find all points within the search radius
+    AnswerType answers;
+    kd_tree.fullSearch(answers, _laser_in_world.translation(), _range_max);
+    // std::cerr << "anche qui" << std::endl;
+    // Extract the matching points from the answers
+   
+     
+      
+    for (PointType* point : answers) {
+       prediction_normal.push_back(*point);
+       Eigen::Matrix<float, 2, 1> actual_point = *point;
+       Eigen::Matrix<float, 2, 1> transformed_point = _laser_in_world.inverse() * actual_point;
+        // Calculate polar coordinates of the transformed point
+        float range = transformed_point.norm();
+        float angle = std::atan2(transformed_point.y(), transformed_point.x());
+	prediction_normal.push_back(actual_point);
+        // Check if the point is within the laser range and angle
+        if (range >= _range_min && range <= _range_max &&
+            angle >= _angle_min && angle <= _angle_max) {
+            prediction_.push_back(actual_point);
+	    
+        }
+    
+    }
+   
+    //std::cerr << "the size of the predicted is:" <<prediction_.size()<<std::endl;
+    //std::cerr << "the size of the predicted is:" <<prediction_normal.size()<<std::endl;
+  } else {
+    // Handle the case where the KD-Tree is not initialized (no points to search)
+    
+    std::cerr << "KD-Tree is not initialized. Cannot compute prediction." << std::endl;
+  }
+  //for (const PointType& point : prediction_) {
+    //std::cout << "X: " << point.x() << ", Y: " << point.y() << std::endl;
+      // }
+  // std::cerr << "the size of the predicted is:"<< prediction_.size() << std::endl;
 }
