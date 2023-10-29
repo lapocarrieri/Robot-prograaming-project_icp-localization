@@ -86,6 +86,7 @@ rviz -d test_data/rviz.rviz
 You should now have the ICP localization system up and running within your ROS environment. If you encounter any issues or have questions, please refer to the project documentation or seek assistance from the project maintainers.
 
 
+[Lattinone_1.0-screen1.webm](https://github.com/lapocarrieri/Robot-prograaming-project_icp-localization/assets/56505429/936b26d2-d891-47ec-a22a-c88fb7b52e40)
 
 
 
