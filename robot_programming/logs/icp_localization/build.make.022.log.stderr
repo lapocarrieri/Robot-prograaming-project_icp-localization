@@ -1,0 +1,9 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:91:6:[m[K [01;31m[Kerror: [m[Kredefinition of ‘[01m[Kvoid callback_initialpose(const PoseWithCovarianceStampedConstPtr&)[m[K’
+   91 | void [01;31m[Kcallback_initialpose[m[K(const geometry_msgs::PoseWithCovarianceStampedConstPtr& msg_) {
+      |      [01;31m[K^~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:81:6:[m[K [01;36m[Knote: [m[K‘[01m[Kvoid callback_initialpose(const PoseWithCovarianceStampedConstPtr&)[m[K’ previously defined here
+   81 | void [01;36m[Kcallback_initialpose[m[K(
+      |      [01;36m[K^~~~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:63: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

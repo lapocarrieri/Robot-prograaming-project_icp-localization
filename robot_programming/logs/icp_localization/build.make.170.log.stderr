@@ -1,0 +1,13 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:9:4:[m[K [01;35m[Kwarning: [m[Kcharacter constant too long for its type
+    9 | Let[01;35m[K's use option 2 from the previous response and initialize _obst_tree_ptr with a valid TreeNode_ object by providing the required constructor arguments. Here's[m[K how you can modify the constructor:
+      |    [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:7:1:[m[K [01;31m[Kerror: [m[K‘[01m[KIf[m[K’ does not name a type
+    7 | [01;31m[KIf[m[K you want to modify the Localizer2D constructor to correctly initialize _obst_tree_ptr without encountering the error related to the missing default constructor in TreeNode_, you can use one of the options I mentioned earlier.
+      | [01;31m[K^~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::setMap(std::shared_ptr<Map>)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:78:56:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(Localizer2D::TreeType {aka TreeNode_<__gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > > >}) (std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > >::iterator, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > >::iterator, int)[m[K’
+   78 |         kd_tree(_obst_vect.begin(),_obst_vect.end(), 10[01;31m[K)[m[K; // Replace 10 with your desired maximum points in leaf
+      |                                                        [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

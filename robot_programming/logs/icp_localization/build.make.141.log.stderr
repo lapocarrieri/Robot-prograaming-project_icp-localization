@@ -1,0 +1,45 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:19:32:[m[K [01;31m[Kerror: [m[K‘[01m[KPointType[m[K’ was not declared in this scope
+   19 | using AnswerType = std::vector<[01;31m[KPointType[m[K*>;
+      |                                [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:19:42:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   19 | using AnswerType = std::vector<PointType*[01;31m[K>[m[K;
+      |                                          [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:19:42:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::process(const ContainerType&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:112:3:[m[K [01;31m[Kerror: [m[K‘[01m[KVector2fVector[m[K’ was not declared in this scope
+  112 |   [01;31m[KVector2fVector[m[K _previous;
+      |   [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:117:11:[m[K [01;31m[Kerror: [m[K‘[01m[KsyntheticSCan[m[K’ was not declared in this scope; did you mean ‘[01m[KsyntheticScan[m[K’?
+  117 |   ICP icp([01;31m[KsyntheticSCan[m[K/current,scan_,_min_points_in_leaf);
+      |           [01;31m[K^~~~~~~~~~~~~[m[K
+      |           [32m[KsyntheticScan[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:117:25:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent[m[K’ was not declared in this scope
+  117 |   ICP icp(syntheticSCan/[01;31m[Kcurrent[m[K,scan_,_min_points_in_leaf);
+      |                         [01;31m[K^~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:122:5:[m[K [01;31m[Kerror: [m[K‘[01m[K_previous[m[K’ was not declared in this scope
+  122 |     [01;31m[K_previous[m[K=current;
+      |     [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::getPrediction(Localizer2D::ContainerType&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:176:3:[m[K [01;31m[Kerror: [m[K‘[01m[KScalar[m[K’ was not declared in this scope; did you mean ‘[01m[Kcv::Scalar[m[K’?
+  176 |   [01;31m[KScalar[m[K searchRadius = 2; // Replace with your desired search radius
+      |   [01;31m[K^~~~~~[m[K
+      |   [32m[Kcv::Scalar[m[K
+In file included from [01m[K/usr/include/opencv4/opencv2/core.hpp:58[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/map.h:6[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:7[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:1[m[K:
+[01m[K/usr/include/opencv4/opencv2/core/types.hpp:669:25:[m[K [01;36m[Knote: [m[K‘[01m[Kcv::Scalar[m[K’ declared here
+  669 | typedef Scalar_<double> [01;36m[KScalar[m[K;
+      |                         [01;36m[K^~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:181:5:[m[K [01;31m[Kerror: [m[K‘[01m[KAnswerType[m[K’ was not declared in this scope
+  181 |     [01;31m[KAnswerType[m[K answers;
+      |     [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:182:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kanswers[m[K’ was not declared in this scope
+  182 |     _obst_tree_ptr->fullSearch([01;31m[Kanswers[m[K, _laser_in_world.translation(), searchRadius);
+      |                                [01;31m[K^~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:182:72:[m[K [01;31m[Kerror: [m[K‘[01m[KsearchRadius[m[K’ was not declared in this scope
+  182 |     _obst_tree_ptr->fullSearch(answers, _laser_in_world.translation(), [01;31m[KsearchRadius[m[K);
+      |                                                                        [01;31m[K^~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

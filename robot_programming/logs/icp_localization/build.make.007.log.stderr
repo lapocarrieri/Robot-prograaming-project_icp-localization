@@ -1,0 +1,7 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:15:10:[m[K [01;31m[Kfatal error: [m[Kmap2.h: No such file or directory
+   15 | #include [01;31m[K"map2.h"[m[K
+      |          [01;31m[K^~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:63: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

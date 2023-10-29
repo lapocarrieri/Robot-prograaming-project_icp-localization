@@ -1,0 +1,10 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::process(const ContainerType&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:94:28:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[KROS_INFO[m[K’
+   94 |  getPrediction(prediction_)
+      |                            [01;31m[K^[m[K
+      |                            [32m[K;[m[K
+   95 |   [32m[KROS_INFO[m[K("prediction created");
+      |   [32m[K~~~~~~~~[m[K                  
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,17 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:66:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_scan_prediction[m[K’ was not declared in this scope
+   66 |   [01;31m[Kpub_scan_prediction[m[K = nh.advertise<sensor_msgs::LaserScan>("/scan_prediction", 10);
+      |   [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:[m[K In function ‘[01m[Kvoid callback_scan(const LaserScanConstPtr&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:203:9:[m[K [01;31m[Kerror: [m[K‘[01m[Klaserscan_msg[m[K’ was not declared in this scope
+  203 |         [01;31m[Klaserscan_msg[m[K.ranges[i] = prediction_[i].norm(); // You can customize how to compute range from your points
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:206:3:[m[K [01;31m[Kerror: [m[K‘[01m[Kpub_scan_prediction[m[K’ was not declared in this scope
+  206 |   [01;31m[Kpub_scan_prediction[m[K.publish(out_scan_prediciton)
+      |   [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:206:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kout_scan_prediciton[m[K’ was not declared in this scope
+  206 |   pub_scan_prediction.publish([01;31m[Kout_scan_prediciton[m[K)
+      |                               [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:63: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

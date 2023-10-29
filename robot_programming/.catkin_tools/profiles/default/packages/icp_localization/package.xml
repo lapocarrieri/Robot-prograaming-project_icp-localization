@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>icp_localization</name>
+    <version>1.0.0</version>
+    <description>TODO</description>
+    <maintainer email="rp@todo.net">TODO</maintainer>
+    <buildtool_depend>catkin</buildtool_depend>
+    <license>BSD</license>
+    
+    <depend>roscpp</depend>
+    <depend>nav_msgs</depend>
+    <depend>sensor_msgs</depend>
+    <depend>geometry_msgs</depend>
+    <depend>visualization_msgs</depend>
+    <depend>tf2_ros</depend>
+</package>

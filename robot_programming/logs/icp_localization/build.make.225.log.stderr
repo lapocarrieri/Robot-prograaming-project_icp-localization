@@ -1,0 +1,10 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:164:19:[m[K [01;31m[Kerror: [m[Kvariable or field ‘[01m[KfilterPoints[m[K’ declared void
+  164 | void filterPoints([01;31m[KContainerType[m[K& prediction) {
+      |                   [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:164:19:[m[K [01;31m[Kerror: [m[K‘[01m[KContainerType[m[K’ was not declared in this scope
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:164:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kprediction[m[K’ was not declared in this scope
+  164 | void filterPoints(ContainerType& [01;31m[Kprediction[m[K) {
+      |                                  [01;31m[K^~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

@@ -1,0 +1,8 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::getPrediction(Localizer2D::ContainerType&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:185:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing TreeType = class TreeNode_<__gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > > >[m[K’ {aka ‘[01m[Kclass TreeNode_<__gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > > >[m[K’} has no member named ‘[01m[KfullSearchLaser[m[K’; did you mean ‘[01m[KfullSearch[m[K’?
+  185 |      kd_tree.[01;31m[KfullSearchLaser[m[K(answers,  _laser_in_world.translation(),
+      |              [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |              [32m[KfullSearch[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

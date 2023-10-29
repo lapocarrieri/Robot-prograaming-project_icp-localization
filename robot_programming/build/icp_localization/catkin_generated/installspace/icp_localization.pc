@@ -1,0 +1,8 @@
+prefix=/home/lattinone/catkin_ws/robot_programming/install
+
+Name: icp_localization
+Description: Description of icp_localization
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: roscpp nav_msgs geometry_msgs sensor_msgs visualization_msgs tf2_ros

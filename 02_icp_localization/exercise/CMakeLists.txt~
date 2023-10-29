@@ -1,0 +1,81 @@
+cmake_minimum_required(VERSION 3.16)
+
+project(icp_localization)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_BUILD_TYPE RelWithDebInfo)
+
+find_package(Eigen3 REQUIRED)
+find_package(OpenCV 4  REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+find_package(catkin REQUIRED COMPONENTS
+    roscpp
+    nav_msgs
+    geometry_msgs
+    sensor_msgs
+    visualization_msgs
+    tf2_ros)
+
+catkin_package(
+    INCLUDE_DIRS
+    "include"
+    CATKIN_DEPENDS
+    roscpp
+    nav_msgs
+    geometry_msgs
+    sensor_msgs
+    visualization_msgs
+    tf2_ros
+)
+
+
+
+add_library(map SHARED src/map.cpp)
+target_include_directories(map PUBLIC ${catkin_INCLUDE_DIRS} ${OpenCV_INCLUDE_DIRS} include)
+target_link_libraries(map PUBLIC ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} Eigen3::Eigen)
+
+add_library(icp SHARED src/icp/eigen_icp_2d.cpp)
+target_include_directories(icp PUBLIC include/icp)
+target_link_libraries(icp PUBLIC Eigen3::Eigen)
+
+# Create rules for the localizer2d SHARED library
+# source files are:
+# - src/localizer2d.cpp
+# - src/ros_bridge.cpp
+# It depends on ROS packages (catkin), Eigen and icp
+# Create a library for localizer2d
+add_library(localizer2d
+  src/localizer2d.cpp
+  src/ros_bridge.cpp
+)
+
+# Link the localizer2d library with catkin libraries, Eigen, and icp
+target_link_libraries(localizer2d ${catkin_LIBRARIES} Eigen3::Eigen icp)
+
+# Include directories for the localizer2d library
+target_include_directories(localizer2d
+  PUBLIC
+  ${catkin_INCLUDE_DIRS}
+  ${Eigen3_INCLUDE_DIRS}
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+
+# Create rules for the localizer_node (located in bin/localizer_node.cpp)
+# It depends on ROS packages (catkin), Eigen, map and localizer2d
+add_executable(localizer_node bin/localizer_node.cpp)
+target_link_libraries(localizer_node ${catkin_LIBRARIES} Eigen3::Eigen map localizer2d )
+
+
+
+# Link the localizer_node executable with catkin libraries, Eigen, map, and localizer2d
+
+# Include directories for the localizer_node executable
+target_include_directories(localizer_node
+  PUBLIC
+  ${catkin_INCLUDE_DIRS}
+  ${Eigen3_INCLUDE_DIRS}
+)
+add_executable(initial_pose_listener bin/initial_pose_listener.cpp)
+target_link_libraries(initial_pose_listener ${catkin_LIBRARIES})
+add_dependencies(initial_pose_listener ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

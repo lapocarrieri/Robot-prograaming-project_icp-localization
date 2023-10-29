@@ -1,0 +1,31 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:18:77:[m[K [01;31m[Kerror: [m[K‘[01m[KVector3f[m[K’ was not declared in this scope; did you mean ‘[01m[KEigen::Vector3f[m[K’?
+   18 | using ContainerType = std::vector<Eigen::Vector3f, Eigen::aligned_allocator<[01;31m[KVector3f[m[K> >;
+      |                                                                             [01;31m[K^~~~~~~~[m[K
+      |                                                                             [32m[KEigen::Vector3f[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:458[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:3[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:448:1:[m[K [01;36m[Knote: [m[K‘[01m[KEigen::Vector3f[m[K’ declared here
+  448 | [01;36m[KEIGEN_MAKE_TYPEDEFS_ALL_SIZES[m[K(float,                f)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:18:85:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   18 | using ContainerType = std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Vector3f[01;31m[K>[m[K >;
+      |                                                                                     [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:18:87:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+   18 | using ContainerType = std::vector<Eigen::Vector3f, Eigen::aligned_allocator<Vector3f> [01;31m[K>[m[K;
+      |                                                                                       [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:20:32:[m[K [01;31m[Kerror: [m[K‘[01m[KContainerType[m[K’ was not declared in this scope
+   20 | using TreeNodeType = TreeNode_<[01;31m[KContainerType[m[K::iterator>;
+      |                                [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:20:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   20 | using TreeNodeType = TreeNode_<ContainerType::iterator[01;31m[K>[m[K;
+      |                                                       [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::setMap(std::shared_ptr<Map>)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:62:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kobst_tree_ptr[m[K’ was not declared in this scope; did you mean ‘[01m[K_obst_tree_ptr[m[K’?
+   62 |         [01;31m[Kobst_tree_ptr[m[K = kd_tree; // Adjust this as needed based on how you manage your KD-Tree instance.
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+      |         [32m[K_obst_tree_ptr[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

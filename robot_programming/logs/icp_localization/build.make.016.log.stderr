@@ -1,0 +1,34 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:[m[K In function ‘[01m[Kvoid callback_initialpose(const PoseWithCovarianceStampedConstPtr&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:90:69:[m[K [01;31m[Kerror: [m[Kinvalid initialization of reference of type ‘[01m[Kconst TransformStamped&[m[K’ {aka ‘[01m[Kconst geometry_msgs::TransformStamped_<std::allocator<void> >&[m[K’} from expression of type ‘[01m[Kconst _pose_type[m[K’ {aka ‘[01m[Kconst geometry_msgs::Pose_<std::allocator<void> >[m[K’}
+   90 |   const geometry_msgs::TransformStamped& transform_msg = [01;31m[Kmsg_->pose.pose[m[K;
+      |                                                          [01;31m[K~~~~~~~~~~~^~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:99:17:[m[K [01;31m[Kerror: [m[Kinvalid initialization of reference of type ‘[01m[Kconst Pose&[m[K’ {aka ‘[01m[Kconst geometry_msgs::Pose_<std::allocator<void> >&[m[K’} from expression of type ‘[01m[Knav_msgs::Odometry[m[K’ {aka ‘[01m[Knav_msgs::Odometry_<std::allocator<void> >[m[K’}
+   99 |   pose2isometry([01;31m[Kodometry_msg[m[K, isometry);
+      |                 [01;31m[K^~~~~~~~~~~~[m[K
+In file included from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:16[m[K:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/ros_bridge.h:29:47:[m[K [01;36m[Knote: [m[Kin passing argument 1 of ‘[01m[Kvoid pose2isometry(const Pose&, Eigen::Isometry2f&)[m[K’
+   29 | void pose2isometry([01;36m[Kconst geometry_msgs::Pose& pose_[m[K, Eigen::Isometry2f& iso_);
+      |                    [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~[m[K
+In file included from [01m[K/opt/ros/noetic/include/ros/ros.h:40[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:4[m[K:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:105:126:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst LinearMatrixType[m[K’ {aka ‘[01m[Kconst class Eigen::Matrix<float, 2, 2>[m[K’} has no member named ‘[01m[Kangle[m[K’
+  105 |   ROS_INFO("Transformed Isometry: (%f, %f, %f)", isometry.translation().x(), isometry.translation().y(), isometry.rotation().[01;31m[Kangle[m[K());
+      |                                                                                                                              [01;31m[K^~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:351:165:[m[K [01;36m[Knote: [m[Kin definition of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION_WITH_FILTER[m[K’
+  351 |     ::ros::console::print(filter, __rosconsole_define_location__loc.logger_, __rosconsole_define_location__loc.level_, __FILE__, __LINE__, __ROSCONSOLE_FUNCTION__, [01;36m[K__VA_ARGS__[m[K)
+      |                                                                                                                                                                     [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:390:7:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROSCONSOLE_PRINT_AT_LOCATION[m[K’
+  390 |       [01;36m[KROSCONSOLE_PRINT_AT_LOCATION[m[K(__VA_ARGS__); \
+      |       [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/ros/console.h:575:35:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG_COND[m[K’
+  575 | #define ROS_LOG(level, name, ...) [01;36m[KROS_LOG_COND[m[K(true, level, name, __VA_ARGS__)
+      |                                   [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/rosconsole/macros_generated.h:110:23:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_LOG[m[K’
+  110 | #define ROS_INFO(...) [01;36m[KROS_LOG[m[K(::ros::console::levels::Info, ROSCONSOLE_DEFAULT_NAME, __VA_ARGS__)
+      |                       [01;36m[K^~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:105:3:[m[K [01;36m[Knote: [m[Kin expansion of macro ‘[01m[KROS_INFO[m[K’
+  105 |   [01;36m[KROS_INFO[m[K("Transformed Isometry: (%f, %f, %f)", isometry.translation().x(), isometry.translation().y(), isometry.rotation().angle());
+      |   [01;36m[K^~~~~~~~[m[K
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:63: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

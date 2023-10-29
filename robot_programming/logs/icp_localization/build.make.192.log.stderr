@@ -1,0 +1,11 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:[m[K In function ‘[01m[Kvoid callback_scan(const LaserScanConstPtr&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:154:38:[m[K [01;31m[Kerror: [m[K‘[01m[Kvoid Localizer2D::getPrediction(Localizer2D::ContainerType&)[m[K’ is protected within this context
+  154 |   localizer.getPrediction(prediction_[01;31m[K)[m[K;
+      |                                      [01;31m[K^[m[K
+In file included from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:14[m[K:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:92:8:[m[K [01;36m[Knote: [m[Kdeclared protected here
+   92 |   void [01;36m[KgetPrediction[m[K(ContainerType& dest_);
+      |        [01;36m[K^~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:63: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

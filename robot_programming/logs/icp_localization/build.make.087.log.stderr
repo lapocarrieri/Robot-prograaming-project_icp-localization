@@ -1,0 +1,83 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:4:24:[m[K [01;31m[Kerror: [m[K‘[01m[KTreeNodeType[m[K’ does not name a type; did you mean ‘[01m[KTreeNode_[m[K’?
+    4 | void printKDTree(const [01;31m[KTreeNodeType[m[K& node, int depth = 0) {
+      |                        [01;31m[K^~~~~~~~~~~~[m[K
+      |                        [32m[KTreeNode_[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In function ‘[01m[Kvoid printKDTree(const int&, int)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:7:29:[m[K [01;31m[Kerror: [m[K‘[01m[KPointType[m[K’ has not been declared
+    7 |         for (int i = 0; i < [01;31m[KPointType[m[K::RowsAtCompileTime; ++i) {
+      |                             [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:8:30:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+    8 |             std::cout << node[01;31m[K->[m[K_mean(i) << " ";
+      |                              [01;31m[K^~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:13:25:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   13 |         printKDTree(node[01;31m[K->[m[Kleft(), depth + 1);
+      |                         [01;31m[K^~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:14:25:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ is not a pointer
+   14 |         printKDTree(node[01;31m[K->[m[Kright(), depth + 1);
+      |                         [01;31m[K^~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K At global scope:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:28:32:[m[K [01;31m[Kerror: [m[K‘[01m[KContainerType[m[K’ was not declared in this scope
+   28 | using TreeNodeType = TreeNode_<[01;31m[KContainerType[m[K::iterator>;
+      |                                [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:28:55:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   28 | using TreeNodeType = TreeNode_<ContainerType::iterator[01;31m[K>[m[K;
+      |                                                       [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:29:35:[m[K [01;31m[Kerror: [m[K‘[01m[KVector3f[m[K’ was not declared in this scope; did you mean ‘[01m[KEigen::Vector3f[m[K’?
+   29 | using ContainerType = std::vector<[01;31m[KVector3f[m[K, Eigen::aligned_allocator<Vector3f> >;
+      |                                   [01;31m[K^~~~~~~~[m[K
+      |                                   [32m[KEigen::Vector3f[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:458[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:3[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:448:1:[m[K [01;36m[Knote: [m[K‘[01m[KEigen::Vector3f[m[K’ declared here
+  448 | [01;36m[KEIGEN_MAKE_TYPEDEFS_ALL_SIZES[m[K(float,                f)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:29:70:[m[K [01;31m[Kerror: [m[K‘[01m[KVector3f[m[K’ was not declared in this scope; did you mean ‘[01m[KEigen::Vector3f[m[K’?
+   29 | using ContainerType = std::vector<Vector3f, Eigen::aligned_allocator<[01;31m[KVector3f[m[K> >;
+      |                                                                      [01;31m[K^~~~~~~~[m[K
+      |                                                                      [32m[KEigen::Vector3f[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:458[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:3[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:448:1:[m[K [01;36m[Knote: [m[K‘[01m[KEigen::Vector3f[m[K’ declared here
+  448 | [01;36m[KEIGEN_MAKE_TYPEDEFS_ALL_SIZES[m[K(float,                f)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:29:78:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   29 | using ContainerType = std::vector<Vector3f, Eigen::aligned_allocator<Vector3f[01;31m[K>[m[K >;
+      |                                                                              [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:29:80:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   29 | using ContainerType = std::vector<Vector3f, Eigen::aligned_allocator<Vector3f> [01;31m[K>[m[K;
+      |                                                                                [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:29:80:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::setMap(std::shared_ptr<Map>)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:70:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kobst_tree_ptr[m[K’ was not declared in this scope; did you mean ‘[01m[K_obst_tree_ptr[m[K’?
+   70 |         [01;31m[Kobst_tree_ptr[m[K = kd_tree; // Adjust this as needed based on how you manage your KD-Tree instance.
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+      |         [32m[K_obst_tree_ptr[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:74:6:[m[K [01;31m[Kerror: [m[K‘[01m[Kobst_tree_ptr[m[K’ was not declared in this scope; did you mean ‘[01m[K_obst_tree_ptr[m[K’?
+   74 |  if ([01;31m[Kobst_tree_ptr[m[K) {
+      |      [01;31m[K^~~~~~~~~~~~~[m[K
+      |      [32m[K_obst_tree_ptr[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:88:33:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+   88 | void Localizer2D::setInitialPose[01;31m[K([m[Kconst Eigen::Isometry2f& initial_pose_) {
+      |                                 [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:98:26:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+   98 | void Localizer2D::process[01;31m[K([m[Kconst ContainerType& scan_) {
+      |                          [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:132:33:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  132 | void Localizer2D::setLaserParams[01;31m[K([m[Kfloat range_min_, float range_max_,
+      |                                 [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:148:32:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  148 | void Localizer2D::getPrediction[01;31m[K([m[KContainerType& prediction_) {
+      |                                [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:156:1:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  156 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:31:53:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   31 | void Localizer2D::setMap(std::shared_ptr<Map> map_) [01;36m[K{[m[K
+      |                                                     [01;36m[K^[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

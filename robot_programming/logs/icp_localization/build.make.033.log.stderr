@@ -1,0 +1,28 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::setMap(std::shared_ptr<Map>)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:31:27:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing element_type = class Map[m[K’ {aka ‘[01m[Kclass Map[m[K’} has no member named ‘[01m[KgetCellType[m[K’
+   31 |                 if (_map->[01;31m[KgetCellType[m[K(row, col) == Map::CellType::Occupied) {
+      |                           [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:31:57:[m[K [01;31m[Kerror: [m[K‘[01m[KMap::CellType[m[K’ has not been declared
+   31 |                 if (_map->getCellType(row, col) == Map::[01;31m[KCellType[m[K::Occupied) {
+      |                                                         [01;31m[K^~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:60:33:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+   60 | void Localizer2D::setInitialPose[01;31m[K([m[Kconst Eigen::Isometry2f& initial_pose_) {
+      |                                 [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:70:26:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+   70 | void Localizer2D::process[01;31m[K([m[Kconst ContainerType& scan_) {
+      |                          [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:104:33:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  104 | void Localizer2D::setLaserParams[01;31m[K([m[Kfloat range_min_, float range_max_,
+      |                                 [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:120:32:[m[K [01;31m[Kerror: [m[Kqualified-id in declaration before ‘[01m[K([m[K’ token
+  120 | void Localizer2D::getPrediction[01;31m[K([m[KContainerType& prediction_) {
+      |                                [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:128:1:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  128 | [01;31m[K}[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:16:53:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+   16 | void Localizer2D::setMap(std::shared_ptr<Map> map_) [01;36m[K{[m[K
+      |                                                     [01;36m[K^[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

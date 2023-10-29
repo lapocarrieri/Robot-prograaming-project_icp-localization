@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/lattinone/catkin_ws/robot_programming/devel/.private/icp_localization/setup.sh

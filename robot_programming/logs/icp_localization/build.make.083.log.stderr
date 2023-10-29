@@ -1,0 +1,8 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:46:57:[m[K [01;31m[Kerror: [m[K‘[01m[Kcallback[m[K’ was not declared in this scope; did you mean ‘[01m[Kcalloc[m[K’?
+   46 |   ros::Subscriber sub = nh.subscribe("/initialpose", 1, [01;31m[Kcallback[m[K);
+      |                                                         [01;31m[K^~~~~~~~[m[K
+      |                                                         [32m[Kcalloc[m[K
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:63: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

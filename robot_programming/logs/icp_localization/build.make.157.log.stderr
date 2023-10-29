@@ -1,0 +1,34 @@
+In file included from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:1[m[K:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:75:19:[m[K [01;31m[Kerror: [m[K‘[01m[KTreeType[m[K’ was not declared in this scope
+   75 |   std::shared_ptr<[01;31m[KTreeType[m[K> _obst_tree_ptr;
+      |                   [01;31m[K^~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:75:27:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   75 |   std::shared_ptr<TreeType[01;31m[K>[m[K _obst_tree_ptr;
+      |                           [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In constructor ‘[01m[KLocalizer2D::Localizer2D()[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:11:7:[m[K [01;31m[Kerror: [m[Ktype ‘[01m[KTreeNode_<__gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > > >[m[K’ is not a direct base of ‘[01m[KLocalizer2D[m[K’
+   11 |       [01;31m[Kkd_tree[m[K(_obst_vect.begin(), _obst_vect.end(), 10);
+      |       [01;31m[K^~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:10:22:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kstd::nullptr_t[m[K’ to ‘[01m[Kint[m[K’ in initialization
+   10 |       _obst_tree_ptr([01;31m[Knullptr[m[K) ,
+      |                      [01;31m[K^~~~~~~[m[K
+      |                      [01;31m[K|[m[K
+      |                      [01;31m[Kstd::nullptr_t[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:11:56:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[K;[m[K’ token
+   11 |       kd_tree(_obst_vect.begin(), _obst_vect.end(), 10)[01;31m[K;[m[K
+      |                                                        [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K At global scope:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:12:1:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K{[m[K’ token
+   12 | [01;31m[K{[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::setMap(std::shared_ptr<Map>)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:69:13:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K.[m[K’ token
+   69 |      kd_tree[01;31m[K.[m[KprintTree();
+      |             [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::getPrediction(Localizer2D::ContainerType&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:184:12:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K.[m[K’ token
+  184 |     kd_tree[01;31m[K.[m[KfullSearch(answers, _laser_in_world.translation(), 2);
+      |            [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

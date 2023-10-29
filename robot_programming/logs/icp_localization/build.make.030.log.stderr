@@ -1,0 +1,11 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:[m[K In function ‘[01m[Kvoid callback_scan(const LaserScanConstPtr&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:137:57:[m[K [01;31m[Kerror: [m[Ktoo few arguments to function ‘[01m[Kvoid isometry2transformStamped(const Isometry2f&, geometry_msgs::TransformStamped&, const string&, const string&, const ros::Time&)[m[K’
+  137 |   isometry2transformStamped(localizer.X(), transform_msg[01;31m[K)[m[K; // Use the current laser pose
+      |                                                         [01;31m[K^[m[K
+In file included from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:16[m[K:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/ros_bridge.h:20:6:[m[K [01;36m[Knote: [m[Kdeclared here
+   20 | void [01;36m[Kisometry2transformStamped[m[K(const Eigen::Isometry2f& pose_,
+      |      [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:63: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

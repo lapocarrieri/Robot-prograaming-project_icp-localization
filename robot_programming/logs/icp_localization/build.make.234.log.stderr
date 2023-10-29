@@ -1,0 +1,31 @@
+In file included from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:1[m[K:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:79:57:[m[K [01;31m[Kerror: [m[K‘[01m[KVector2f[m[K’ was not declared in this scope; did you mean ‘[01m[KEigen::Vector2f[m[K’?
+   79 |   std::vector<Eigen::Vector2f, Eigen::aligned_allocator<[01;31m[KVector2f[m[K>> scan_fixed;
+      |                                                         [01;31m[K^~~~~~~~[m[K
+      |                                                         [32m[KEigen::Vector2f[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Core:458[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:1[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:3[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:1[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Core/Matrix.h:448:1:[m[K [01;36m[Knote: [m[K‘[01m[KEigen::Vector2f[m[K’ declared here
+  448 | [01;36m[KEIGEN_MAKE_TYPEDEFS_ALL_SIZES[m[K(float,                f)
+      | [01;36m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:1[m[K:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:79:57:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   79 |   std::vector<Eigen::Vector2f, Eigen::aligned_allocator<[01;31m[KVector2f[m[K>> scan_fixed;
+      |                                                         [01;31m[K^~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:79:65:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+   79 |   std::vector<Eigen::Vector2f, Eigen::aligned_allocator<Vector2f[01;31m[K>>[m[K scan_fixed;
+      |                                                                 [01;31m[K^~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::process(const ContainerType&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:98:18:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ksize[m[K’ in ‘[01m[K((Localizer2D*)this)->Localizer2D::scan_fixed[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   98 |   if (scan_fixed.[01;31m[Ksize[m[K() == 0) {
+      |                  [01;31m[K^~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:99:18:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[Kconst ContainerType[m[K’ {aka ‘[01m[Kconst std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > >[m[K’} to ‘[01m[Kint[m[K’ in assignment
+   99 |     scan_fixed = [01;31m[Kscan_[m[K;
+      |                  [01;31m[K^~~~~[m[K
+      |                  [01;31m[K|[m[K
+      |                  [01;31m[Kconst ContainerType {aka const std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > >}[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

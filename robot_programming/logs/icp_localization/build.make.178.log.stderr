@@ -1,0 +1,28 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:13:2:[m[K [01;31m[Kerror: [m[K‘[01m[KContainerType[m[K’ does not name a type
+   13 |  [01;31m[KContainerType[m[K _obst_vect;
+      |  [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:14:20:[m[K [01;31m[Kerror: [m[K‘[01m[KTreeType[m[K’ was not declared in this scope
+   14 |    std::shared_ptr<[01;31m[KTreeType[m[K> _obst_tree_ptr;
+      |                    [01;31m[K^~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:14:28:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   14 |    std::shared_ptr<TreeType[01;31m[K>[m[K _obst_tree_ptr;
+      |                            [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:17:5:[m[K [01;31m[Kerror: [m[K‘[01m[KTreeType[m[K’ does not name a type
+   17 |     [01;31m[KTreeType[m[K kd_tree;
+      |     [01;31m[K^~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:18:41:[m[K [01;31m[Kerror: [m[K‘[01m[KTreeType[m[K’ was not declared in this scope
+   18 | using _obst_tree_ptr = std::make_shared<[01;31m[KTreeType[m[K>(_obst_vect.begin(), _obst_vect.end(), 10);
+      |                                         [01;31m[K^~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:18:24:[m[K [01;31m[Kerror: [m[Kexpected type-specifier
+   18 | using _obst_tree_ptr = [01;31m[Kstd[m[K::make_shared<TreeType>(_obst_vect.begin(), _obst_vect.end(), 10);
+      |                        [01;31m[K^~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:19:17:[m[K [01;31m[Kerror: [m[Kexpected type-specifier before ‘[01m[KTreeType[m[K’
+   19 | using kd_tree = [01;31m[KTreeType[m[K(_obst_vect.begin(), _obst_vect.end(), 10);
+      |                 [01;31m[K^~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::setMap(std::shared_ptr<Map>)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:72:56:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(Localizer2D::TreeType {aka TreeNode_<__gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > > >}) (std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > >::iterator, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > >::iterator, int)[m[K’
+   72 |         kd_tree(_obst_vect.begin(),_obst_vect.end(), 10[01;31m[K)[m[K; // Replace 10 with your desired maximum points in leaf
+      |                                                        [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

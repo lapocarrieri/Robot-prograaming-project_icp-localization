@@ -1,0 +1,18 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:[m[K In function ‘[01m[Kvoid callback_scan(const LaserScanConstPtr&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:177:55:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(Eigen::Isometry2f {aka Eigen::Transform<float, 2, 1>}) ()[m[K’
+  177 |   isometry2transformStamped(localizer._laser_in_world([01;31m[K)[m[K, transform_msg, transform_msg.header.frame_id,transform_msg.child_frame_id,transform_msg.header.stamp); // Use the current laser pose
+      |                                                       [01;31m[K^[m[K
+In file included from [01m[K/usr/include/eigen3/Eigen/Geometry:44[m[K,
+                 from [01m[K/usr/include/eigen3/Eigen/Dense:6[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:8[m[K:
+[01m[K/usr/include/eigen3/Eigen/src/Geometry/Transform.h:389:35:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::Transform<Scalar, Dim, Mode, _Options>::Scalar Eigen::Transform<Scalar, Dim, Mode, _Options>::operator()(Eigen::Transform<Scalar, Dim, Mode, _Options>::Index, Eigen::Transform<Scalar, Dim, Mode, _Options>::Index) const [with _Scalar = float; int _Dim = 2; int _Mode = 1; int _Options = 0; Eigen::Transform<Scalar, Dim, Mode, _Options>::Scalar = float; Eigen::Transform<Scalar, Dim, Mode, _Options>::Index = long int][m[K’
+  389 |   EIGEN_DEVICE_FUNC inline Scalar [01;36m[Koperator[m[K() (Index row, Index col) const { return m_matrix(row,col); }
+      |                                   [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Geometry/Transform.h:389:35:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+[01m[K/usr/include/eigen3/Eigen/src/Geometry/Transform.h:392:36:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KEigen::Transform<Scalar, Dim, Mode, _Options>::Scalar& Eigen::Transform<Scalar, Dim, Mode, _Options>::operator()(Eigen::Transform<Scalar, Dim, Mode, _Options>::Index, Eigen::Transform<Scalar, Dim, Mode, _Options>::Index) [with _Scalar = float; int _Dim = 2; int _Mode = 1; int _Options = 0; Eigen::Transform<Scalar, Dim, Mode, _Options>::Scalar = float; Eigen::Transform<Scalar, Dim, Mode, _Options>::Index = long int][m[K’
+  392 |   EIGEN_DEVICE_FUNC inline Scalar& [01;36m[Koperator[m[K() (Index row, Index col) { return m_matrix(row,col); }
+      |                                    [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/eigen3/Eigen/src/Geometry/Transform.h:392:36:[m[K [01;36m[Knote: [m[K  candidate expects 2 arguments, 0 provided
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:63: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

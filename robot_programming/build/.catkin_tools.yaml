@@ -1,0 +1,6 @@
+devel_space: /home/lattinone/catkin_ws/robot_programming/devel
+install: false
+install_space: /home/lattinone/catkin_ws/robot_programming/install
+profile: default
+source_space: /home/lattinone/catkin_ws/robot_programming/src
+workspace: /home/lattinone/catkin_ws/robot_programming

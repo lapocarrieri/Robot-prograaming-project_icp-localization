@@ -1,0 +1,28 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In constructor ‘[01m[KLocalizer2D::Localizer2D()[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:12:1:[m[K [01;31m[Kerror: [m[Kexpected identifier before ‘[01m[K{[m[K’ token
+   12 | [01;31m[K{[m[K
+      | [01;31m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K At global scope:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:15:41:[m[K [01;31m[Kerror: [m[K‘[01m[KTreeType[m[K’ was not declared in this scope
+   15 | using _obst_tree_ptr = std::make_shared<[01;31m[KTreeType[m[K>(_obst_vect.begin(), _obst_vect.end(), 10);
+      |                                         [01;31m[K^~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:15:24:[m[K [01;31m[Kerror: [m[Kexpected type-specifier
+   15 | using _obst_tree_ptr = [01;31m[Kstd[m[K::make_shared<TreeType>(_obst_vect.begin(), _obst_vect.end(), 10);
+      |                        [01;31m[K^~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:16:17:[m[K [01;31m[Kerror: [m[Kexpected type-specifier before ‘[01m[KTreeType[m[K’
+   16 | using kd_tree = [01;31m[KTreeType[m[K(_obst_vect.begin(), _obst_vect.end(), 10);
+      |                 [01;31m[K^~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::setMap(std::shared_ptr<Map>)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:69:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kkd_tree[m[K’ was not declared in this scope
+   69 |         [01;31m[Kkd_tree[m[K(_obst_vect.begin(),_obst_vect.end(), 10); // Replace 10 with your desired maximum points in leaf
+      |         [01;31m[K^~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::getPrediction(Localizer2D::ContainerType&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:184:7:[m[K [01;31m[Kerror: [m[K‘[01m[K_obst_tree_ptr[m[K’ was not declared in this scope
+  184 |   if ([01;31m[K_obst_tree_ptr[m[K) {
+      |       [01;31m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:187:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kkd_tree[m[K’ was not declared in this scope
+  187 |     [01;31m[Kkd_tree[m[K.fullSearch(answers, _laser_in_world.translation(), 2);
+      |     [01;31m[K^~~~~~~[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

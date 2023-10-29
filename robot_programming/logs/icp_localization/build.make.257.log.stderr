@@ -1,0 +1,7 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:[m[K In function ‘[01m[Kvoid callback_scan(const LaserScanConstPtr&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:207:33:[m[K [01;31m[Kerror: [m[K‘[01m[KContainerType[m[K’ was not declared in this scope
+  207 |     laserscan_msg.ranges.resize([01;31m[KContainerType[m[K.size());
+      |                                 [01;31m[K^~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:63: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

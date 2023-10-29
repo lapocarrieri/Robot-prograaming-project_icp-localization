@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/initial_pose_listener.cpp
+ros/ros.h
+-
+geometry_msgs/PoseWithCovarianceStamped.h
+-
+Eigen/Core
+-
+Eigen/Geometry
+-
+

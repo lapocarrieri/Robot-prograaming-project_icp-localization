@@ -1,0 +1,21 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In constructor ‘[01m[KLocalizer2D::Localizer2D()[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:11:52:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KTreeNode_<__gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > > >::TreeNode_()[m[K’
+   11 |       _laser_in_world(Eigen::Isometry2f::Identity()[01;31m[K)[m[K {
+      |                                                    [01;31m[K^[m[K
+In file included from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/localizer2d.h:6[m[K,
+                 from [01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:1[m[K:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/icp/eigen_kdtree.h:24:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KTreeNode_<IteratorType_>::TreeNode_(TreeNode_<IteratorType_>::IteratorType, TreeNode_<IteratorType_>::IteratorType, int) [with IteratorType_ = __gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > >; TreeNode_<IteratorType_>::IteratorType = __gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > >][m[K’
+   24 |   [01;36m[KTreeNode_[m[K(IteratorType begin_, IteratorType end_, int max_points_in_leaf = 20)
+      |   [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/icp/eigen_kdtree.h:24:3:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 0 provided
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/icp/eigen_kdtree.h:10:7:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[KTreeNode_<__gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > > >::TreeNode_(TreeNode_<__gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > > >&&)[m[K’
+   10 | class [01;36m[KTreeNode_[m[K {
+      |       [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/include/icp/eigen_kdtree.h:10:7:[m[K [01;36m[Knote: [m[K  candidate expects 1 argument, 0 provided
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:[m[K In member function ‘[01m[Kvoid Localizer2D::setMap(std::shared_ptr<Map>)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/src/localizer2d.cpp:67:56:[m[K [01;31m[Kerror: [m[Kno match for call to ‘[01m[K(Localizer2D::TreeType {aka TreeNode_<__gnu_cxx::__normal_iterator<Eigen::Matrix<float, 2, 1>*, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > > > >}) (std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > >::iterator, std::vector<Eigen::Matrix<float, 2, 1>, Eigen::aligned_allocator<Eigen::Matrix<float, 2, 1> > >::iterator, int)[m[K’
+   67 |         kd_tree(_obst_vect.begin(),_obst_vect.end(), 10[01;31m[K)[m[K; // Replace 10 with your desired maximum points in leaf
+      |                                                        [01;31m[K^[m[K
+make[2]: *** [CMakeFiles/localizer2d.dir/build.make:63: CMakeFiles/localizer2d.dir/src/localizer2d.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:412: CMakeFiles/localizer2d.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

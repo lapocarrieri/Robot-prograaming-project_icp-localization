@@ -1,0 +1,6 @@
+/usr/bin/ld: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o: in function `callback_map(boost::shared_ptr<nav_msgs::OccupancyGrid_<std::allocator<void> > const> const&)':
+/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:90: undefined reference to `Localizer2D::printKDTree()'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:177: /home/lattinone/catkin_ws/robot_programming/devel/.private/icp_localization/lib/icp_localization/localizer_node] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

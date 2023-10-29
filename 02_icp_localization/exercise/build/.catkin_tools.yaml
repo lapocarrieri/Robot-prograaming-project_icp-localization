@@ -1,0 +1,6 @@
+devel_space: /home/lattinone/Desktop/02_icp_localization/exercise/devel
+install: false
+install_space: /home/lattinone/Desktop/02_icp_localization/exercise/install
+profile: default
+source_space: /home/lattinone/Desktop/02_icp_localization/exercise/src
+workspace: /home/lattinone/Desktop/02_icp_localization/exercise

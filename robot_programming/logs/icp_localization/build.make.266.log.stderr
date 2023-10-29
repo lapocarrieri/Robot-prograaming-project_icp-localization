@@ -1,0 +1,36 @@
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:[m[K In function ‘[01m[Kvoid callback_scan(const LaserScanConstPtr&)[m[K’:
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:162:16:[m[K [01;31m[Kerror: [m[K‘[01m[KPointType[m[K’ does not name a type
+  162 |     for (const [01;31m[KPointType[m[K &point : localizer.prediction_) {
+      |                [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:168:6:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[KpointCloudPublisher[m[K’
+  168 |     }
+      |      [01;31m[K^[m[K
+      |      [32m[K;[m[K
+......
+  171 |     [32m[KpointCloudPublisher[m[K.publish(pointCloudMsg);
+      |     [32m[K~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:171:5:[m[K [01;31m[Kerror: [m[K‘[01m[KpointCloudPublisher[m[K’ was not declared in this scope
+  171 |     [01;31m[KpointCloudPublisher[m[K.publish(pointCloudMsg);
+      |     [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:171:33:[m[K [01;31m[Kerror: [m[K‘[01m[KpointCloudMsg[m[K’ was not declared in this scope
+  171 |     pointCloudPublisher.publish([01;31m[KpointCloudMsg[m[K);
+      |                                 [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:185:37:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[Ktransform_msg[m[K’
+  185 |     geometry_msgs::TransformStamped [01;31m[Ktransform_msg[m[K;
+      |                                     [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:185:36:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[Ktransform_msg[m[K’
+  185 |     geometry_msgs::TransformStamped[01;31m[K [m[K[32m[Ktransform_msg[m[K;
+      |                                    [01;31m[K^[m[K[32m[K~~~~~~~~~~~~~[m[K
+      |                                    [32m[K)[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:162:9:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K([m[K’
+  162 |     for [01;36m[K([m[Kconst PointType &point : localizer.prediction_) {
+      |         [01;36m[K^[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:185:37:[m[K [01;31m[Kerror: [m[K‘[01m[Ktransform_msg[m[K’ was not declared in this scope
+  185 |     geometry_msgs::TransformStamped [01;31m[Ktransform_msg[m[K;
+      |                                     [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/lattinone/catkin_ws/robot_programming/src/icp_localization/bin/localizer_node.cpp:187:3:[m[K [01;31m[Kerror: [m[K‘[01m[Ktransform_msg[m[K’ was not declared in this scope
+  187 |   [01;31m[Ktransform_msg[m[K.header.frame_id = FRAME_WORLD;
+      |   [01;31m[K^~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/localizer_node.dir/build.make:63: CMakeFiles/localizer_node.dir/bin/localizer_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1764: CMakeFiles/localizer_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
