@@ -57,7 +57,7 @@ rosrun icp_localization localizer_node
     sudo apt install ros-noetic-map-server
    ```
 - To launch the node, go to the project directory, source ros and launch the `map_server` node
-  - ```sh
+  ```sh
   cd /home/lattinone/catkin_ws/02_icp_localization
     source /opt/ros/noetic/setup.bash
     rosrun map_server map_server test_data/cappero_map.yaml    
@@ -78,7 +78,7 @@ rviz -d test_data/rviz.rviz
   sudo apt install ros-noetic-stage-ros ros-noetic-teleop-twist-keyboard
   ```
 - To launch the simulator, go to the project directory, source ros, launch the roscore and launch the `stageros` node
-  - ```sh
+   ```sh
   cd /home/lattinone/catkin_ws/02_icp_localization
    source /opt/ros/noetic/setup.bash
     rosrun stage_ros stageros test_data/cappero.world
