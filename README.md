@@ -41,7 +41,8 @@ cd /path/to/your/project/folder
 git clone https://github.com/yourusername/icp_localization.git
 ```
 then go to "robot_programming/src/icp_localization"
-and change the link of the folder to your actual folder:  /path/to/your/project/folder/
+and change the link of the folder to your actual folder:  /path/to/your/project/folder/02_icp_localization/exercise
+(mine is /home/lattinone/Desktop/02_icp_localization/exercise)
 ### 4. Requirements
 Navigate to your ROS workspace and source the devel/setup.bash file:
 ```
