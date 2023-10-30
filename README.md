@@ -33,12 +33,15 @@ Create a directory to store your project. You can do this using the following co
 mkdir -p /path/to/your/project/folder
 ```
 Replace /path/to/your/project/folder with the actual path where you want to create your project folder.
+
 ### 3. Clone the Repository
 Navigate to your project folder and clone this GitHub repository into it using Git:
 ```
 cd /path/to/your/project/folder
 git clone https://github.com/yourusername/icp_localization.git
 ```
+then go to "robot_programming/src/icp_localization"
+and change the link of the folder to your actual folder:  /path/to/your/project/folder/
 ### 4. Requirements
 Navigate to your ROS workspace and source the devel/setup.bash file:
 ```
