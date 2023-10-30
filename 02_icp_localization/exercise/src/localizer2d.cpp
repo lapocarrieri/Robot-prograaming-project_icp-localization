@@ -62,9 +62,9 @@ void Localizer2D::setMap(std::shared_ptr<Map> map_) {
                 }
 	    }
 	}
-	 std::cout << "the size of the predicted is:"<< _obst_vect.size() << std::endl;
+	 std::cout << "the size of the occupied cells is:"<< _obst_vect.size() << std::endl;
 	kd_tree = TreeType(_obst_vect.begin(), _obst_vect.end(), 10);
-	//	kd_tree.printTree();
+        //kd_tree.printTree();
 	   
          
 
@@ -132,7 +132,24 @@ void Localizer2D::process(const ContainerType& scan_) {
     ROS_INFO("Scan [Size points in the map :(nearby:%ld,predicted:%ld,reals:%ld),norm error of landmarks:%f,pos=(x %f, y %f, angle %f)]",prediction_normal.size(),prediction_.size(), scan_.size(), icp.chi(),
 	     _laser_in_world.translation().x(), _laser_in_world.translation().y(), (rotation_angle*360)/2*M_PI);
 
+    // code to avoid to be stuck
+    // values.push_back(icp.chi())
+    //if values.size()>5{
+    //  values.erase(values.begin());
+    //}
+    //}
+    //int sum=0;
+    //for(int value : values){
+      //sum +=value;
+      //}
+    //random_vector << (rand() / static_cast<float>(RAND_MAX)) * 0.2 - 1, (rand() / static_cast<float>(RAND_MAX)) * 0.2 - 1;
+    //float random_rotation = (std::rand() / static_cast<float>(RAND_MAX)) * ( M_PI/4);
 
+    
+    //  if ((sum+icp.chi())/6>30){
+    //_laser_in_world.translation()+=random_vector;
+    //	_laser_in_world.linear() = Eigen::Rotation2Df(random_rotation).toRotationMatrix();
+    //	}
      scan_fixed = scan_;
     
 

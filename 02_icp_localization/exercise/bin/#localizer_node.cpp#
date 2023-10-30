@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
   // The namespace of the node is set to global
   ros::NodeHandle nh("/");
   // Create a Map object and assign it to map_ptr
-map_ptr = std::make_shared<Map>();
+  map_ptr = std::make_shared<Map>();
 
 
   // Create shared pointer for the Map object
