@@ -49,37 +49,36 @@ After the input scan is processed, remember to send a TF message (`geometry_msgs
 You can test your localizer using `RViz`. We have provided a configuration that you can directly run after your node has started.
 
 Go to the project directory, source ros and launch rviz with our configuration
-```sh
+```
 cd /home/lattinone/catkin_ws/02_icp_localization
 source /opt/ros/noetic/setup.bash
 rviz -d test_data/rviz.rviz
 ```
 
 ## Requirements
-
+'''
 source /opt/ros/noetic/setup.bash
 roscore
-
-
+'''
 ### Map Server
 - Install the `ros-${DISTRO}-map-server` package. In our case (valid for Lattinone VM) we are using _ROS Noetic_
-   ```sh
+   ```
     sudo apt install ros-noetic-map-server
    ```
 - To launch the node, go to the project directory, source ros and launch the `map_server` node
-  - ```sh
+  ```
   cd /home/lattinone/catkin_ws/02_icp_localization
     source /opt/ros/noetic/setup.bash
     rosrun map_server map_server test_data/cappero_map.yaml    
-    ```
+  ```
 
 ### Stage-ROS
 - Install the `ros-${DISTRO}-stage-ros` and `ros-${DISTRO}-teleop-twist-keyboard` package. As above, we are using _ROS Noetic_
-  ```sh
+  ```
   sudo apt install ros-noetic-stage-ros ros-noetic-teleop-twist-keyboard
   ```
 - To launch the simulator, go to the project directory, source ros, launch the roscore and launch the `stageros` node
-  - ```sh
+   ```
   cd /home/lattinone/catkin_ws/02_icp_localization
    source /opt/ros/noetic/setup.bash
     rosrun stage_ros stageros test_data/cappero.world
